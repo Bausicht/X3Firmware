@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>First Name</title>
+<style type="text/css">
+.auto-style1 {
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 1px;
+}
+</style>
+</head>
+
+<body>
+
+<table width="885" class="auto-style1" style="width: 717px; vertical-align: top; font-size: 12px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+	<tr>
+		<td colspan="9" style="text-align:center; background-color:silver;">Import from file</td>
+	</tr>
+	<tr>
+		<td colspan="3" align="right"><input id="skid" type="checkbox" value="0" name="Skip row header"/><label for="skid" >Skip row header</label>&nbsp;&nbsp;</td>
+		<td colspan="3" align="left"><input id="mulfile" type="file" name="upl" multiple="" accept=".txt" onchange="openFile(event);"/></td>
+		<td colspan="3" align="left"><div id="recordfound" >&nbsp;&nbsp;Record found: 0</div></td>
+	</tr>
+	<tr>
+		<td colspan="9">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="9" style="text-align:center; background-color:silver;">Field mapping definition</td>
+	</tr>
+	<tr>
+		<td>First/Full Name</td>
+		<td colspan="2">Last Name</td>
+		<td>PIN code</td>
+		<td>Card number</td>
+		<td style="width: 96px">Enable card</td>
+		<td>Start validity</td>
+		<td>End validity</td>
+	    <td>Auth. group</td>
+	</tr>
+	<tr>
+		<td>
+			<select style="width: 108px; text-align: left;" id="r00" onchange="previewOnChange(event)">
+			<option value="0" selected="selected">Select Column</option>
+			<option value="1">Column #1</option>
+			<option value="2">Column #2</option>
+			<option value="3">Column #3</option>
+			<option value="4">Column #4</option>
+			<option value="5">Column #5</option>
+			<option value="6">Column #6</option>
+			<option value="7">Column #7</option>
+			<option value="8">Column #8</option>
+			<option value="9">Column #9</option>
+			<option value="10">Column #10</option>
+			</select>
+		</td>
+		<td colspan="2"><select style="width: 108px; text-align: left;" id="r01" onchange="previewOnChange(event)">
+			<option value="0" selected="selected">none</option>
+			<option value="1">Column #1</option>
+			<option value="2">Column #2</option>
+			<option value="3">Column #3</option>
+			<option value="4">Column #4</option>
+			<option value="5">Column #5</option>
+			<option value="6">Column #6</option>
+			<option value="7">Column #7</option>
+			<option value="8">Column #8</option>
+			<option value="9">Column #9</option>
+			<option value="10">Column #10</option>
+			</select>
+        </td>
+		<td><select style="width: 108px; text-align: left;" id="r02" onchange="previewOnChange(event)">
+			<option value="0" selected="selected" >0000</option>
+			<option value="1">Column #1</option>
+			<option value="2">Column #2</option>
+			<option value="3">Column #3</option>
+			<option value="4">Column #4</option>
+			<option value="5">Column #5</option>
+			<option value="6">Column #6</option>
+			<option value="7">Column #7</option>
+			<option value="8">Column #8</option>
+			<option value="9">Column #9</option>
+			<option value="10">Column #10</option>
+			</select>
+        </td>
+		<td><select style="width: 108px; text-align: left;" id="r03" onchange="previewOnChange(event)">
+			<option value="0" selected="selected">Select Column</option>
+			<option value="1">Column #1</option>
+			<option value="2">Column #2</option>
+			<option value="3">Column #3</option>
+			<option value="4">Column #4</option>
+			<option value="5">Column #5</option>
+			<option value="6">Column #6</option>
+			<option value="7">Column #7</option>
+			<option value="8">Column #8</option>
+			<option value="9">Column #9</option>
+			<option value="10">Column #10</option>
+			</select>
+        </td>
+		<td style="width: 96px"><select style="width: 108px; text-align: left;" id="r04" onchange="previewOnChange(event)">
+			<option value="0" selected="selected">Yes</option>
+			<option value="1">Column #1</option>
+			<option value="2">Column #2</option>
+			<option value="3">Column #3</option>
+			<option value="4">Column #4</option>
+			<option value="5">Column #5</option>
+			<option value="6">Column #6</option>
+			<option value="7">Column #7</option>
+			<option value="8">Column #8</option>
+			<option value="9">Column #9</option>
+			<option value="10">Column #10</option>
+			</select>
+</td>
+		<td><select style="width: 108px; text-align: left;" id="r05" onchange="previewOnChange(event)">
+			<option value="0" selected="selected">Always</option>
+			<option value="1">Column #1</option>
+			<option value="2">Column #2</option>
+			<option value="3">Column #3</option>
+			<option value="4">Column #4</option>
+			<option value="5">Column #5</option>
+			<option value="6">Column #6</option>
+			<option value="7">Column #7</option>
+			<option value="8">Column #8</option>
+			<option value="9">Column #9</option>
+			<option value="10">Column #10</option>
+			</select>
+</td>
+		<td><select name="select" id="r06" style="width: 108px; text-align: left;" onchange="previewOnChange(event)">
+          <option value="0" selected="selected">Always</option>
+          <option value="1">Column #1</option>
+          <option value="2">Column #2</option>
+          <option value="3">Column #3</option>
+          <option value="4">Column #4</option>
+          <option value="5">Column #5</option>
+          <option value="6">Column #6</option>
+          <option value="7">Column #7</option>
+          <option value="8">Column #8</option>
+          <option value="9">Column #9</option>
+          <option value="10">Column #10</option>
+        </select></td>
+	<td><select id="r07" style="width: 108px; text-align: left;" onchange="previewOnChange(event)">
+      <option value="0" selected="selected">Not assigned</option>
+      <option value="1">Column #1</option>
+      <option value="2">Column #2</option>
+      <option value="3">Column #3</option>
+      <option value="4">Column #4</option>
+      <option value="5">Column #5</option>
+      <option value="6">Column #6</option>
+      <option value="7">Column #7</option>
+      <option value="8">Column #8</option>
+      <option value="9">Column #9</option>
+      <option value="10">Column #10</option>
+    </select></td>
+	</tr>
+	<tr style="font-size: 9px; font-family: Verdana, Geneva, Tahoma, sans-serif;" >
+		<td style="height: 9px"><div id="p00">&nbsp;</div></td>
+		<td style="height: 9px" colspan="2"><div id="p01">&nbsp;</div></td>
+		<td style="height: 9px"><div id="p02">&nbsp;</div></td>
+		<td style="height: 9px"><div id="p03">&nbsp;</div></td>
+		<td style="height: 9px; width: 96px;"><div id="p04">&nbsp;</div></td>
+		<td style="height: 9px"><div id="p05">&nbsp;</div></td>
+		<td style="height: 9px"><div id="p06">&nbsp;</div></td>
+	    <td style="height: 9px"><div id="p07">&nbsp;</div></td>
+	</tr>
+	<tr style="font-size: 9px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+		<td style="height: 9px"><div id="q00">&nbsp;</div></td>
+		<td colspan="2" style="height: 6px"><div id="q01">&nbsp;</div></td>
+		<td style="height: 9px"><div id="q02">&nbsp;</div></td>
+		<td style="height: 9px"><div id="q03">&nbsp;</div></td>
+		<td style="height: 9px"><div id="q04">&nbsp;</div></td>
+		<td style="height: 9px"><div id="q05">&nbsp;</div></td>
+		<td style="height: 9px"><div id="q06">&nbsp;</div></td>
+		<td style="height: 9px"><div id="q07">&nbsp;</div></td>
+	<td style="height: 9px">&nbsp;</td>
+	</tr>
+	<tr style="height:33px;">
+		<td>&nbsp;</td>
+		<td colspan="2">&nbsp;</td>
+		<td>&nbsp;</td>
+		<td align="right"><input id="applyupload" type="button" value="Import" onclick="proceedwithimport();" disabled/></td>
+		<td colspan="4"><div id="newloader">&nbsp;</div></td>
+	</tr>
+	<tr>
+		<td colspan="9" style="height: 5px"></td>
+	</tr>
+	<tr>
+		<td colspan="9" style="text-align:center; background-color:silver;">Field Description</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ddd;">
+		<td>
+		First/Full Name</td>
+		<td style="width: 2px">Mandatory</td>
+		<td colspan="7">20 bytes max. which represents the user’s name</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ddd;">
+		<td>
+		Last Name</td>
+		<td style="width: 2px">Optional</td>
+		<td colspan="7">contributes to compose user's name, if different from default "none"</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ddd;">
+		<td>
+		PIN code</td>
+		<td style="width: 2px">Optional</td>
+		<td colspan="7">4 digits which represent the user’s PIN code</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ddd;">
+		<td>
+		Card number</td>
+		<td style="width: 2px">Mandatory</td>
+		<td colspan="7">16 bytes which represent the unique card code</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ddd;">
+		<td>
+		Enable card</td>
+		<td style="width: 2px">Optional</td>
+		<td colspan="7">1 byte which represents the card enable flag. 
+		1=enabled,0=disabled</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ddd;">
+		<td>
+		Start validity</td>
+		<td style="width: 2px">Optional</td>
+		<td colspan="7">10 bytes which represent the starting card validity date 
+		and time (YYMMDDhhmm)</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ddd;">
+		<td>
+		End validity</td>
+		<td style="width: 2px">Optional</td>
+		<td colspan="7">10 bytes which represent the ending card validity date 
+		and time (YYMMDDhhmm)</td>
+	</tr>
+	<tr>
+	  <td>Auth. group </td>
+	  <td style="width: 2px">Optional</td>
+	  <td colspan="7">10 bytes which represent the Authorization group ID </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

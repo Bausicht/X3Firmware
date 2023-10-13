@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	    <title>CLOKI</title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<script TYPE="text/javascript">
+		var user_Lang = navigator.language || navigator.userLanguage;
+		var mnu = new Array(); /* global */
+		var i, maxitemsmenu = 22;
+		
+	    var params = decodeURIComponent((new RegExp('[?|&]lang=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+		
+		if (params !== null )
+		{
+			user_Lang = params;
+		}
+		
+		if (user_Lang.length > 2)
+			user_Lang = user_Lang.substr(0,2);
+		
+		if ( (user_Lang !== "en") && (user_Lang !== "it") && (user_Lang !== "fr") && (user_Lang !== "de") && (user_Lang !== "es") ){
+		  user_Lang="en";
+		}
+		document.write("<script type=\"text/JavaScript\" src=\"lang/" + user_Lang + "/" + "messages.js?id=5678\"></"+"script>");
+		</script>
+		<script type="text/javascript" src="javascript/tinybox.js"></script>
+
+		<!-- [PRODUCTION] --><script type="text/javascript" src="./javascript/editablegrid-2.0.1.js"></script>
+		<!-- [DO NOT DEPLOY]  <script src="./javascript/editablegrid.js"></script>-->
+		<!-- [DO NOT DEPLOY]  <script src="./javascript/editablegrid_renderers.js" ></script>-->
+		<!-- [DO NOT DEPLOY]  <script src="./javascript/editablegrid_editors.js" ></script>-->
+		<!-- [DO NOT DEPLOY]  <script src="./javascript/editablegrid_validators.js" ></script>-->
+		<!-- [DO NOT DEPLOY]  <script src="./javascript/editablegrid_utils.js" ></script>-->
+		<!-- [DO NOT DEPLOY]  <script src="./javascript/editablegrid_charts.js" ></script>--> 	
+		<link rel="stylesheet" href="javascript/editablegrid.css" type="text/css" media="screen">
+
+		<!-- including version title -->
+		<script type="text/javascript" src="./javascript/version.js?id=29"></script>
+
+		<!-- including script for USERS.TXT editor -->
+		<script type="text/javascript" src="./javascript/alarm_editor.js?id=123"></script>
+						
+		<script type="text/javascript" src="javascript/datepickr.js?id=45"></script>
+		
+		<style type="text/css">
+			.calendar {
+				font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;
+				font-size: 0.9em;
+				background-color: #EEE;
+				color: #333;
+				border: 1px solid #DDD;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				border-radius: 4px;
+				padding: 0.2em;
+				width: 14em;
+			}
+			
+			.calendar .months {
+				background-color: #F6AF3A;
+				border: 1px solid #E78F08;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				border-radius: 4px;
+				color: #FFF;
+				padding: 0.2em;
+				text-align: center;
+			}
+			
+			.calendar .prev-month,
+			.calendar .next-month {
+				padding: 0;
+			}
+			
+			.calendar .prev-month {
+				float: left;
+			}
+			
+			.calendar .next-month {
+				float: right;
+			}
+			
+			.calendar .current-month {
+				margin: 0 auto;
+			}
+			
+			.calendar .months .prev-month,
+			.calendar .months .next-month {
+				color: #FFF;
+				text-decoration: none;
+				padding: 0 0.4em;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			
+			.calendar .months .prev-month:hover,
+			.calendar .months .next-month:hover {
+				background-color: #FDF5CE;
+				color: #C77405;
+			}
+			
+			.calendar table {
+				border-collapse: collapse;
+				padding: 0;
+				font-size: 0.8em;
+				width: 100%;
+			}
+			
+			.calendar th {
+				text-align: center;
+			}
+			
+			.calendar td {
+				text-align: right;
+				padding: 1px;
+				width: 14.3%;
+			}
+			
+			.calendar td span {
+				display: block;
+				color: #1C94C4;
+				background-color: #F6F6F6;
+				border: 1px solid #CCC;
+				text-decoration: none;
+				padding: 0.2em;
+				cursor: pointer;
+			}
+			
+			.calendar td span:hover {
+				color: #C77405;
+				background-color: #FDF5CE;
+				border: 1px solid #FBCB09;
+			}
+			
+			.calendar td.today span {
+				background-color: #FFF0A5;
+				border: 1px solid #FED22F;
+				color: #363636;
+			}
+			
+			.deepsea
+			{
+			background-image: url('javascript/images/header_wte.jpg');
+			background-color:white;
+			color:white;
+			font-family: sans-serif;
+			font-weight:600; 
+			font-size: 24px;
+			}
+
+		</style>
+</head>
+<body>
+<table width="100%" ><tr><td><table width="100%" height="66" class="deepsea" border="0"><tr><td height="12" colspan="2"></td></tr>
+        <tr>
+          <td width="85%" height="34"><b><div id="wtetitle">CLOKI</div></b></td>
+          <td width="15%" align="right" valign="middle"><img src='./javascript/images/flags.png' border=0 usemap="#flags">
+			<map name="#flags" id="flags">
+			<area shape=”rect” coords="0, 0, 22, 18" href='alarms.html?lang=it' alt='ITA' title='ITA' onFocus='this.blur()'>
+			<area shape=”rect” coords="25, 0, 46, 18" href='alarms.html?lang=en' alt='ENG' title='ENG' onFocus='this.blur()'>
+			<area shape=”rect” coords="49, 0, 70, 18" href='alarms.html?lang=fr' alt='FRA' title='FRA' onFocus='this.blur()'>
+			<area shape=”rect” coords="72, 0, 94, 18" href='alarms.html?lang=de' alt='DEU' title='DEU' onFocus='this.blur()'>
+			<area shape=”rect” coords="97, 0, 118, 18" href='alarms.html?lang=es' alt='SPA' title='SPA' onFocus='this.blur()'>
+			</map>
+		  </td>  
+        </tr>
+<tr><td height="12" colspan="2"></td></tr></table>
+<table width="100%" border="0">
+<tr>
+	<td width="182" height="25" valign="top" class="normal">
+	<table width="100%">
+	  <tr>
+	  <td>
+	  <ul id="menu-v">
+	      <li><a id="it_017" href="#"><div id="mnu141">TABLES</div></a>
+			  <ul class="sub">
+				<li><a id="it_001" href="timemod.html"><div id="mnu000">TIME MODELS</div></a></li>
+				<li><a id="it_002" href="terminals.html"><div id="mnu001">GATES</div></a></li>    
+				<li><a id="it_003" href="auth.html"><div id="mnu002">AUTHORIZATIONS</div></a></li>
+				<li><a id="it_004" href="authgroup.html"><div id="mnu110">AUTHORIZATION GROUP</div></a></li>
+				<li><a id="it_005" href="cardrng.html"><div id="mnu003">CARDS RANGES</div></a></li>
+				<li><a id="it_006" href="axreason.html"><div id="mnu004">REASONS</div></a></li>	
+				<li><a id="it_007" href="users.html"><div id="mnu005">USERS</div></a></li>
+				<li><a id="it_008" href="cards.html"><div id="mnu006">CARDS</div></a></li>	
+				<li><a id="it_009" href="alarms.html"><div id="mnu007">ALARMS</div></a></li>
+				<li><a id="it_022" href="functionkey.html"><div id="mnu150">FKEY</div></a></li>
+			  </ul>
+         </li>
+		<li><a id="it_018" href="#"><div id="mnu142">VIEWS</div></a>
+			<ul class="sub">
+				<li><a id="it_010" href="transactions.html"><div id="mnu008">TRANSACTIONS</div></a></li>
+				<li><a id="it_016" href="rectifications.html"><div id="mnu136">TIMECARD ADJUSTMENTS</div></a></li>
+				<li><a id="it_021" href="absentpresent.html"><div id="mnu145">ABSENT&nbsp;&amp;&nbsp;PRESENT</div></a></li>
+			</ul>
+		</li>	
+    <li><a id="it_019" href="#"><div id="mnu143">WIRELESS LOCKS</div></a>
+        <ul class="sub">
+		    <li><a id="it_011" href="servicecard.html">SERVICE CARDS</a></li>
+            <li><a id="it_012" href="lockdescgroup.html"><div id="mnu009">LOCKS DESCRIPTIONS</div></a></li>
+            <li><a id="it_013" href="lockauthgroup.html"><div id="mnu010">LOCKS AUTH.</div></a></li>
+			<li><a id="it_014" href="hotel.html"><div id="mnu010">HOTEL</div></a></li>
+        </ul>
+    </li>
+	<li><a href="wizprocview.html" onClick="return checkifLite('0');">MULTI-STEP</a></li>
+    <li><a id="it_020" href="#"><div id="mnu144">CONFIGURATION</div></a>
+        <ul class="sub">
+            <li><a id="it_015" href="messages.html" onClick="return checkifLite('0');"><div id="mnu121">MESSAGES</div></a></li>
+            <li><a href="layouteditor.html" onClick="return checkifLite('1');">LAYOUT</a></li>
+        </ul>
+    </li>
+    <li><a href="onlinenroll.html"><div id="mnu190">FINGERPRINT ENROLLMENT</div></a></li>
+	<li><div id="homepage"></div></li>
+</ul>
+</td>
+</tr>
+	</table>
+</td>
+<td width="1028" valign="top" class="normal">
+		<table width="82%" border="0" cellpadding="2" cellspacing="0">
+		<tr>
+		  <td colspan="3" align="left">&nbsp;</td>
+		  <td colspan="8" align="left"><b class="menu_section"><div id="mnu069">ALARMS</div></b></td>
+		  <td width="78" align="left">&nbsp;</td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  <td colspan="3"><b class="menu_section"><div id="mnu070">HOLIDAYS</div></b></td>
+		</tr>
+		<tr>
+		  <td colspan="3" align="left">&nbsp;</td>
+		  <td colspan="8" align="left">&nbsp;</td>
+		  <td align="left">&nbsp;</td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  <td colspan="3" rowspan="9" valign="top"><table border="0" cellpadding="1">
+            <tr>
+              <td colspan="3" style="height:190px;" valign="top" ><div id="tableholydays"></div></td>
+            </tr>
+            <tr>
+              <td width="37" align="left"><div id="holyprevpage"></div></td>
+              <td width="37"><div id="pagecounter"></div></td>
+              <td width="37" align="right"><div id="holynextpage"></div></td>
+            </tr>
+            <tr>
+              <td><input name="text2" type="text" id="holyd" onchange="showDates();" value="" size="5" maxlength="4" placeholder="DDMM"></td>
+              <script> new datepickr('holyd', {'dateFormat': 'dm'});</script>
+              <td align="right"><div id="action_on_holydays"></div></td>
+            <td align="right"><div id="canc_on_holydays"></div></td>
+            </tr>
+          </table></td>
+		  </tr>
+		<tr>
+		  <td colspan="3" align="left"><div align="right"><div id="mnu071">Scheduling time</div></div></td>
+		  <td colspan="8" align="left"><input type="text" id="tm" value="" size="5" maxlength="4" placeholder="HHMM"></td>
+		  <td align="left">&nbsp;</td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  </tr>
+		<tr>
+		  <td height="34" colspan="3" align="left"><div align="right"><div id="mnu072">Action</div></div></td>
+		  <td colspan="9" align="left" valign="middle">
+		    <select id="action" name="select" onChange="xshowhide();">
+                <option value="R" selected>R - Relay</option>
+                <option value="D" selected>D - Door</option>
+				<option value="F" >F - Client FTP</option>
+				<option value="G" >G - GPRS</option>
+				<option value="W" >W - WiFi</option>
+				<option value="!" >! - Reboot</option>
+            </select>&nbsp;<div id="block-relay">Slave<label id="div_slave"><select id="slave"><option value="0" selected>0</option></select></label>&nbsp;Relay<select id="relay"><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+            &nbsp;<div id="block-door">Gate<label id="div_gate"><select id="gate"><option value="0" selected>0-All</option></select></label>&nbsp;<label>Command<select id="command"><option value="disable" selected>disable</option><option value="free">free</option><option value="emergency">emergency</option><option value="no_ctrl">no_ctrl</option><option value="entry">entry</option><option value="exit">exit</option><option value="operative">operative</option><option value="busy">busy</option></select></label></div>
+            </td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  </tr>
+		<tr>
+		  <td colspan="3" align="right" ><div id="mnu073">Activation time</div></td>
+		  <td colspan="8" align="left" ><input name="text" type="text" id="acttime" value="" size="4" maxlength="3" placeholder="TTT">
+		  sec.</td>
+		  <td align="left">&nbsp;</td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  </tr>
+		<tr>
+		  <td colspan="3" align="left" >&nbsp;</td>
+		  <td colspan="8" align="left" >&nbsp;</td>
+		  <td align="left">&nbsp;</td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  </tr>
+		<tr>
+		  <td colspan="3" align="left" >&nbsp;</td>
+		  <td colspan="8" align="left" bgcolor="#E5E5E5"><div align="center"><div id="mnu017">Days of week</div></div></td>
+		  <td align="left">&nbsp;</td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  </tr>
+		<tr>
+		  <td colspan="3" align="left">&nbsp;</td>
+		  <td width="20" align="left"><div align="center"><div id="mnu021">Sun</div></div></td>
+		  <td width="23" align="left"><div align="center"><div id="mnu022">Mon</div></div></td>
+		  <td width="23" align="left"><div align="center"><div id="mnu023">Tue</div></div></td>
+		  <td width="23" align="left"><div align="center"><div id="mnu024">Wed</div></div></td>
+		  <td width="23" align="left"><div align="center"><div id="mnu025">Thu</div></div></td>
+		  <td width="23" align="left"><div align="center"><div id="mnu026">Fri</div></div></td>
+		  <td width="23" align="left"><div align="center"><div id="mnu027">Sat</div></div></td>
+		  <td width="23" align="left"><div align="center"><div id="mnu028">Hol</div></div></td>
+		  <td align="left">&nbsp;</td>
+		  <td colspan="2" align="left">&nbsp;</td>
+		  </tr>
+		<tr>
+		  <td colspan="3" align="right"><div id="mnu074">Activation days</div></td>
+		  <td align="left"><input name="" type="checkbox" value="" id="W10">		    
+		  </td>
+		<td align="left"><input name="Input4" type="checkbox" value="" id="W11"></td>
+		  <td align="left"><input name="Input5" type="checkbox" value="" id="W12"></td>
+		  <td align="left"><input name="Input6" type="checkbox" value="" id="W13"></td>
+		  <td align="left"><input name="Input3" type="checkbox" value="" id="W14"></td>
+		  <td align="left"><input name="Input7" type="checkbox" value="" id="W15"></td>
+		  <td align="left"><input name="Input8" type="checkbox" value="" id="W16"></td>
+		  <td align="left"><input name="Input9" type="checkbox" value="" id="W17"></td>
+		  <td align="center">&nbsp;</td>
+		<td colspan="2" align="left">&nbsp;</td>
+		</tr>
+		<tr>
+		  <td colspan="3"><div align="right"></div></td>
+		  <td colspan="8" align="right" >&nbsp;</td>
+		  <td >&nbsp;</td>
+		  <td colspan="2" >&nbsp;</td>
+		  </tr>
+		
+		<tr align="right">
+		  <td colspan="3">&nbsp;</td>
+		  <td colspan="8" align="right"><div id="action_on_user"></div></td>
+		  <td align="left"><div id="cancel_modfy"></div></td>
+		  <td colspan="2">&nbsp;</td>
+		  <td colspan="2">&nbsp;</td>
+		  <td>&nbsp;</td>
+		  </tr>
+		<tr align="right">
+		  <td colspan="3">&nbsp;</td>
+		  <td colspan="8">&nbsp;</td>
+		  <td colspan="5">&nbsp;</td>
+		  <td>&nbsp;</td>
+		  </tr>
+		<tr align="right">
+		  <td colspan="17" align="left"><table width="800" border="0" align="left">
+            <tr><td align="right"><label for="filter">Filter :</label>
+            <input type="text" id="filter" size="17" maxlength="16"/>
+            <input type="button" id="actfilt" value="Search" onClick="setfiltergrid(document.getElementById('filter').value)"/>
+            </td></tr></table></td>
+		</tr>
+		<tr align="left">
+		  <td colspan="17"><div id="tablecontent">
+            <p><img src="./JAVASCRIPT/IMAGES/loader.gif"/><font face="Verdana, Arial, Helvetica, sans-serif"><b class="style1">&nbsp;&nbsp;Loading Table, please wait...</b></font></p>
+		    </div></td>
+		  </tr>
+		<tr>
+		  <td colspan="17" align="left"><table width="800" border="0" align="left">
+		    <tr>
+		      <td align="left"><div id="firstpage"></div></td>
+		      <td align="left"><div id="prevpage"></div></td>
+		      <td align="center"><div id="totalrows"></div></td>
+		      <td align="right"><div id="nextpage"></div></td>
+		      <td align="right"><div id="lastpage"></div></td>
+		      </tr>
+		    </table></td>
+		  </tr>
+		<tr>
+		  <td colspan="17" align="left">&nbsp;</td>
+		  </tr>
+		<tr>
+		  <td colspan="17" align="left"><span style="color:#FF0000">Warning: extended slave device format is supported starting from firmware version g01 build 2616 (for X1/X2) and g03 build 3014 (for others)</span></td>
+		  </tr>
+		</table>		
+        </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

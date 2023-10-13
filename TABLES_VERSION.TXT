@@ -1,4 +1,0 @@
-[Version]
-btransaction.loc=??
-
-TRANSACTIONS.TXT=??
