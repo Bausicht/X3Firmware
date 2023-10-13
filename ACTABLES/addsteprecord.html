@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+.auto-style1 {
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 1px;
+}
+</style>
+</head>
+
+<body>
+<table width="361" border="0" cellpadding="2" cellspacing="0" class="auto-style1" style="vertical-align: top; font-size: 12px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+  <tr>
+    <td width="131" align="left" class="menu_section"><div id='html_titlepage'>NEW STEP</div></td>
+    <td colspan="3" align="right" class="menu_section">PROC_
+            <select id="step_key">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+              <option value="G">G</option>
+              <option value="H">H</option>
+              <option value="I">I</option>
+              <option value="J">J</option>
+              <option value="K">K</option>
+              <option value="L">L</option>
+              <option value="M">M</option>
+              <option value="N">N</option>
+              <option value="O">O</option>
+              <option value="P">P</option>
+              <option value="Q">Q</option>
+              <option value="R">R</option>
+              <option value="S">S</option>
+              <option value="T">T</option>
+              <option value="U">U</option>
+              <option value="V">V</option>
+              <option value="W">W</option>
+              <option value="X">X</option>
+              <option value="Y">Y</option>
+              <option value="Z">Z</option>
+            </select>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><div >Step description</div></td>
+    <td colspan="3"><input type="text" id="dd" size="31" maxlength="30"></td>
+  </tr>
+  <tr>
+    <td align="left">Step order</td>
+    <td colspan="3"><input type="text" id="OOO" size="4" maxlength="3"></td>
+  </tr>
+  <tr>
+    <td align="left">Backward  step</td>
+    <td colspan="3"><select id="PPP" style="width:180px;">
+      <option value="000">None (default)</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left">Visibile on state </td>
+    <td colspan="3" ><select id="AA" style="width:180px;">
+      <option value="0000000000">None (default)</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left">Input type </td>
+    <td colspan="3"><select id="I" onChange="checkInputType(this);">
+        <option value="0" selected>0 Menu</option>
+        <option value="1">1 Manual input with table check</option>
+        <option value="2">2 Manual input without table check</option>
+        <option value="3">3 Buttons</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left"><div>Mandatory</div></td>
+    <td colspan="3"><select id="R">
+        <option value="0">0 No</option>
+        <option value="1">1 Yes</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left">Keyboard type </td>
+    <td colspan="3"><select id="K" >
+        <option value="0" selected>0 None</option>
+        <option value="1">1 Alphanumeric</option>
+        <option value="2">2 Numeric</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left"><div >Items table</div></td>
+    <td>TABLE_<input type="text" id="TT" size="3" maxlength="2" placeholder="NN" onkeyup="checkTTpresence(this)">
+    </td>
+    <td align="right"><div id="n00">&nbsp;</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">Step filter</td>
+    <td colspan="3"><select id="ooo" style="width:180px;" onChange="filloutFilteringItem(this);">
+      <option value="000">None (default)</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left">Filtering Item</td>
+    <td colspan="3"><select id="xxx" style="width:180px;">
+        <option value="                              ">None (default)</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left">Fill type </td>
+    <td width="94"><select id="Z" name="select2">
+        <option value="0" selected>None</option>
+        <option value="1">right fill</option>
+        <option value="2">left fill</option>
+    </select></td>
+    <td width="51" align="right">fill char</td>
+    <td width="67"><input type="text" id="F" size="2" maxlength="1"></td>
+  </tr>
+  <tr>
+    <td>Default selection</td>
+    <td colspan="3"><select id="DD" style="width:214px;">
+	<option value="                              " selected>None</option></select>
+	</td>
+  </tr>
+  <tr>
+    <td>Input mask</td>
+    <td colspan="3"><input type="text" id="MM" size="31" maxlength="30"></td>
+  </tr>
+  <tr>
+    <td colspan="4" align="center"><input type="button" id="addnewstepsrecord" onClick='addnewstatesrecord(q);' value="Add new"></td>
+  </tr>
+</table>
+</body>
+</html>
